@@ -1,0 +1,5 @@
+<resources>
+    <style name="Theme.SkillGapAI" parent="android:Theme.Material.NoActionBar">
+        <item name="android:statusBarColor">#1E88E5</item>
+    </style>
+</resources>

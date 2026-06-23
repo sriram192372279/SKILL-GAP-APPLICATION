@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="en" class="h-full">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>AI Interview Copilot Settings</title>
+  <!-- Google Fonts Outfit -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <!-- Lucide Icons -->
+  <script src="https://unpkg.com/lucide@latest"></script>
+  <!-- Tailwind output CSS -->
+  <link rel="stylesheet" href="output.css">
+  <style>
+    body {
+      background-color: #0b0c16;
+      color: #cbd5e1;
+    }
+  </style>
+</head>
+<body class="h-full font-outfit select-none flex flex-col">
+  <div class="flex-1 overflow-y-auto px-6 py-6 space-y-6">
+    <!-- Header -->
+    <header class="flex items-center space-x-3 border-b border-white/5 pb-4">
+      <div class="p-2.5 bg-indigo-500/10 rounded-xl border border-indigo-500/20 text-indigo-400">
+        <i data-lucide="settings" class="w-6 h-6"></i>
+      </div>
+      <div>
+        <h1 class="text-lg font-bold text-slate-100">Copilot Settings</h1>
+        <p class="text-xs text-slate-400">Configure your capture, API credentials, and prompts.</p>
+      </div>
+    </header>
+
+    <form id="settings-form" class="space-y-5" onsubmit="event.preventDefault();">
+      
+      <!-- API Configuration -->
+      <section class="space-y-4">
+        <h2 class="text-xs font-semibold uppercase tracking-wider text-indigo-400 flex items-center space-x-1">
+          <i data-lucide="key" class="w-3.5 h-3.5"></i>
+          <span>API Credentials</span>
+        </h2>
+        
+        <div class="glass-card rounded-xl p-4 border border-white/5 space-y-4">
+          <!-- Provider -->
+          <div>
+            <label class="block text-xs font-medium text-slate-400 mb-1.5">AI Provider</label>
+            <select id="api-provider" class="w-full glass-input rounded-lg px-3 py-2 text-sm text-slate-200">
+              <option value="gemini">Google Gemini (Recommended - Multimodal)</option>
+              <option value="openai">OpenAI (GPT-4o / GPT-4 Vision)</option>
+            </select>
+          </div>
+
+          <!-- API Key -->
+          <div>
+            <label class="block text-xs font-medium text-slate-400 mb-1.5">API Key</label>
+            <div class="relative">
+              <input type="password" id="api-key" placeholder="Enter API key" class="w-full glass-input rounded-lg pl-3 pr-10 py-2 text-sm text-slate-200">
+              <button type="button" id="btn-toggle-key" class="absolute right-2 top-1/2 -translate-y-1/2 text-slate-500 hover:text-slate-300">
+                <i data-lucide="eye" class="w-4 h-4"></i>
+              </button>
+            </div>
+          </div>
+
+          <!-- Model -->
+          <div>
+            <label class="block text-xs font-medium text-slate-400 mb-1.5">Model Name</label>
+            <input type="text" id="api-model" placeholder="e.g., gemini-1.5-flash or gpt-4o" class="w-full glass-input rounded-lg px-3 py-2 text-sm text-slate-200">
+          </div>
+        </div>
+      </section>
+
+      <!-- Source Selection -->
+      <section class="space-y-4">
+        <h2 class="text-xs font-semibold uppercase tracking-wider text-indigo-400 flex items-center space-x-1">
+          <i data-lucide="monitor" class="w-3.5 h-3.5"></i>
+          <span>Screen Capture</span>
+        </h2>
+        
+        <div class="glass-card rounded-xl p-4 border border-white/5 space-y-4">
+          <!-- Window/Screen Picker -->
+          <div>
+            <label class="block text-xs font-medium text-slate-400 mb-1.5">Capture Source</label>
+            <div class="flex space-x-2">
+              <select id="capture-source" class="flex-1 glass-input rounded-lg px-3 py-2 text-sm text-slate-200">
+                <option value="">Select a window or screen...</option>
+              </select>
+              <button type="button" id="btn-refresh-sources" class="px-3 bg-white/5 hover:bg-white/10 border border-white/5 rounded-lg text-slate-300 transition-all" title="Refresh Windows List">
+                <i data-lucide="refresh-cw" class="w-4 h-4"></i>
+              </button>
+            </div>
+          </div>
+
+          <!-- Auto-capture Interval -->
+          <div>
+            <label class="block text-xs font-medium text-slate-400 mb-1.5">Auto Capture Interval</label>
+            <select id="capture-interval" class="w-full glass-input rounded-lg px-3 py-2 text-sm text-slate-200">
+              <option value="0">Manual Only</option>
+              <option value="3000">Every 3 Seconds</option>
+              <option value="5000">Every 5 Seconds</option>
+              <option value="10000">Every 10 Seconds</option>
+              <option value="15000">Every 15 Seconds</option>
+              <option value="30000">Every 30 Seconds</option>
+            </select>
+          </div>
+        </div>
+      </section>
+
+      <!-- System Prompt / Role Prompt -->
+      <section class="space-y-4">
+        <h2 class="text-xs font-semibold uppercase tracking-wider text-indigo-400 flex items-center space-x-1">
+          <i data-lucide="user-cog" class="w-3.5 h-3.5"></i>
+          <span>Copilot Role & Prompt</span>
+        </h2>
+        
+        <div class="glass-card rounded-xl p-4 border border-white/5 space-y-4">
+          <div>
+            <label class="block text-xs font-medium text-slate-400 mb-1.5">System Instruction</label>
+            <textarea id="system-prompt" rows="5" placeholder="Define the AI's role and target guidelines..." class="w-full glass-input rounded-lg px-3 py-2 text-xs text-slate-200 resize-y leading-relaxed font-mono"></textarea>
+            <p class="text-[10px] text-slate-500 mt-1">Provide clear guidelines. E.g., formatting answers in clean bullet points, providing talking points first, writing compact code snippets, etc.</p>
+          </div>
+        </div>
+      </section>
+      
+      <!-- Action Buttons -->
+      <div class="flex items-center space-x-3 pt-2">
+        <button type="button" id="btn-save" class="flex-1 py-2.5 px-4 bg-indigo-600 hover:bg-indigo-500 text-sm font-semibold rounded-lg text-white shadow-lg shadow-indigo-600/10 flex items-center justify-center space-x-2 transition-all">
+          <i data-lucide="save" class="w-4 h-4"></i>
+          <span>Save Settings</span>
+        </button>
+        <button type="button" id="btn-cancel" class="px-4 py-2.5 bg-white/5 hover:bg-white/10 text-slate-300 rounded-lg text-sm transition-all border border-white/5">
+          <span>Cancel</span>
+        </button>
+      </div>
+
+    </form>
+  </div>
+
+  <!-- Toast notification -->
+  <div id="toast" class="fixed bottom-4 right-4 bg-emerald-600 text-white text-xs font-semibold px-4 py-3 rounded-lg shadow-lg flex items-center space-x-2 translate-y-20 opacity-0 pointer-events-none transition-all duration-300">
+    <i data-lucide="check-circle" class="w-4 h-4"></i>
+    <span id="toast-message">Settings saved successfully!</span>
+  </div>
+
+  <script>
+    lucide.createIcons();
+  </script>
+  <!-- Load settings renderer -->
+  <script src="settings-renderer.js"></script>
+</body>
+</html>

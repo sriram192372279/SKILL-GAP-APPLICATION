@@ -1,0 +1,2 @@
+"# 🎙️ Interactive AI Mock Interview Hub & Placement Simulator\n\nI have successfully designed, built, and compiled a brand new **AI Mock Interview Simulator** inside the **\"Assistant\"** (`ChatScreen.kt`) tab of your application. The entire codebase 
+<truncated 2802 bytes>

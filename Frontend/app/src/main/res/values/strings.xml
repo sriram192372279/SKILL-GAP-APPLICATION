@@ -1,0 +1,19 @@
+<resources>
+    <string name="app_name">SkillGap AI</string>
+    <string name="login_title">SkillGap AI</string>
+    <string name="username_hint">Username</string>
+    <string name="full_name_hint">Full Name</string>
+    <string name="target_role_hint">Target Role (e.g. Android Developer)</string>
+    <string name="login_button">Launch AI Engine</string>
+    <string name="dashboard_welcome">Welcome, %s</string>
+    <string name="target_role_label">Target: %s</string>
+    <string name="add_skill_hint">Skill Name</string>
+    <string name="add_skill_button">Add Skill</string>
+    <string name="analyze_button">Generate Intelligence Report</string>
+    <string name="analysis_title">Intelligence Analysis</string>
+    <string name="missing_skills_title">Gap Analysis</string>
+    <string name="recommendations_title">90-Day Mastery Roadmap</string>
+    <string name="percentage_score">Ready: %d%%</string>
+    <string name="upload_resume">Upload PDF Resume</string>
+    <string name="career_progress">Career Readiness Progress</string>
+</resources>

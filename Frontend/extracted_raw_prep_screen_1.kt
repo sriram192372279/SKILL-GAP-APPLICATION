@@ -1,0 +1,2 @@
+"package com.sriram.skillgap.utils\n\ndata class PrepQuestion(\n    val question: String,\n    val answer: String,\n    val companies: List<String>\n)\n\ndata class PrepRoleDetails(\n    val title: String,\n    val selectionProcess: List<String>,\n    val 
+<truncated 65194 bytes>
