@@ -1,0 +1,26 @@
+# Gradle files
+.gradle/
+build/
+app/build/
+
+# IDE/Editor config
+.idea/
+.kotlin/
+.vscode/
+*.iml
+.DS_Store
+
+# Local configuration
+local.properties
+
+# Node/JavaScript dependencies
+node_modules/
+dist/
+jspm_packages/
+.npm
+.eslintcache
+
+# Logs
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
