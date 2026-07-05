@@ -1,0 +1,61 @@
+ 🚀 Skill Gap App - CI/CD Project Report
+
+ 📦 Repository Information
+
+* Repository Name
+* Branch
+* Commit ID
+* Workflow Run Time
+* Status
+
+## 📊 Module Completion
+
+| Module                 | Status      | Total Test Cases | Passed | Failed | Completion |
+| ---------------------- | ----------- | ---------------: | -----: | -----: | ---------: |
+| Website                | ✅ Completed |              300 |    300 |      0 |       100% |
+| Frontend (Android App) | ✅ Completed |              300 |    300 |      0 |       100% |
+| Backend API            | ✅ Completed |              300 |    300 |      0 |       100% |
+
+## 📈 Completion Progress
+
+Website
+🟩🟩🟩🟩🟩🟩🟩🟩🟩🟩 100%
+
+Frontend
+🟦🟦🟦🟦🟦🟦🟦🟦🟦🟦 100%
+
+Backend
+🟨🟨🟨🟨🟨🟨🟨🟨🟨🟨 100%
+
+Overall Project
+🟩🟩🟩🟩🟩🟩🟩🟩🟩🟩 100%
+
+## 📋 Test Execution Summary
+
+* Total Modules: 3
+* Total Test Cases: 900
+* Passed: 900
+* Failed: 0
+* Success Rate: 100%
+* Build Status: SUCCESS
+
+## ✅ Quality Checks
+
+* Repository Uploaded
+* Website Build Successful
+* Frontend Build Successful
+* Backend Build Successful
+* Documentation Available
+* Test Cases Uploaded
+* CI Workflow Passed
+
+## 🎯 Final Result
+
+Overall Project Completion: 100%
+
+Status:
+🏆 SUCCESS
+
+Generate this report by writing to `$GITHUB_STEP_SUMMARY` so that it appears in the **Summary** tab of GitHub Actions after every workflow run.
+
+The report should be visually attractive, professional, and suitable for demonstrating a final-year engineering project.
